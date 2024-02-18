@@ -1,6 +1,6 @@
 # workflow-auto-exec
 
-An Electron application with Vue
+An Electron application with Vue 2024
 
 ## Recommended IDE Setup
 
