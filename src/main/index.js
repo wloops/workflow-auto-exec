@@ -13,6 +13,8 @@ function createWindow() {
     ...(process.platform === 'linux' ? { icon } : {}),
     webPreferences: {
       preload: join(__dirname, '../preload/index.js'),
+      nodeIntegration: true, //允许渲染进程使用node.js
+      contextIsolation: false, //允许渲染进程使用node.js
       sandbox: false
     }
   })
