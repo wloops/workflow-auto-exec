@@ -12,7 +12,7 @@
 let config = {}
 // 默认配置文件
 const configSource = {
-  // appCode: ENV.VITE_APP_CODE,
+  appCode: 'workflow-auto-exec',
   // 项目标识代码
   // projectCode: `${ENV.VITE_APP_CODE}_${ENV.VITE_APP_ENV}`,
   // 项目名

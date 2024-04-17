@@ -1,12 +1,15 @@
 <script setup>
 const open = async () => {
-  const { chromium } = require('playwright')
-  console.log('preload.js loaded', chromium)
-  const browser = await chromium.launch({ headless: false })
-  const context = await browser.newContext()
-  const page = await context.newPage()
-  // 打开当前页面
-  await page.goto('https://www.baidu.com')
+  // openChrome()
+  const { Builder } = require('selenium-webdriver')
+  console.log('open chrome', Builder)
+  const loginUrl = 'http://work.paytunnel.cn:19060/gms-v4/login.jsp?key=developmentServerTest121'
+  const driver = await new Builder().forBrowser('chrome').build()
+  driver.manage().window().maximize() //窗口最大化
+  await driver.get(loginUrl)
+  await driver.findElement({ id: 'userID' }).sendKeys('username')
+  await driver.findElement({ id: 'hisu_password' }).sendKeys('password')
+  // await driver.findElement({ id: 'submit' }).click()
 }
 </script>
 

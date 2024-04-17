@@ -1,7 +1,6 @@
 <script setup>
-import { menuRouterFormat, menuRouter } from '@/router/menuRouter.js'
+import { menuRouterFormatList } from '@/router/menuRouter.js'
 
-// 新增
 const props = defineProps({
   mode: {
     type: String,
@@ -11,14 +10,17 @@ const props = defineProps({
 // 菜单模式，horizontal 水平，vertical 垂直
 const mode = toRef(props, 'mode')
 
-const menuList = ref(menuRouterFormat(menuRouter))
-
+// 菜单数据
+const menuList = ref(menuRouterFormatList)
+console.log('menuList', menuList.value)
 const router = useRouter()
+// 子菜单点击事件
 const onClickMenuItem = (key) => {
   router.push(key)
 }
 
 const route = useRoute()
+// 当前选中菜单
 const selectedKeys = computed(() => [route.path])
 </script>
 <template>
@@ -33,10 +35,6 @@ const selectedKeys = computed(() => [route.path])
     <MenuItem v-for="menu of menuList" :key="menu.path" :menu="menu" />
   </a-menu>
 </template>
-
-<style scoped>
-/* 没改动，略... */
-</style>
 
 <style scoped>
 .menu.arco-menu-horizontal {

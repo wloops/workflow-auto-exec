@@ -46,6 +46,7 @@
     "eslint-plugin-vue": "^9.20.1",
     "playwright": "^1.41.2",
     "prettier": "^3.2.4",
+    "selenium-webdriver": "^4.19.0",
     "unocss": "^0.59.3",
     "unplugin-auto-import": "^0.17.5",
     "unplugin-icons": "^0.18.5",

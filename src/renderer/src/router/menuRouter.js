@@ -17,6 +17,14 @@ export const menuRouter = [
           title: '开发中功能'
         },
         component: () => import('@/views/Developing/index.vue')
+      },
+      {
+        path: 'test',
+        name: 'test',
+        meta: {
+          title: 'TEST'
+        },
+        component: () => import('@/views/test.vue')
       }
     ]
   }
